@@ -87,7 +87,7 @@ const cartSlice = createSlice({
     },
     // @ts-ignore
     [getCartItems.fulfilled]: (state, action) => {
-      console.log(action);
+      // console.log(action);
       state.isLoading = false;
       state.cartItems = action.payload;
     },
@@ -98,7 +98,7 @@ const cartSlice = createSlice({
   },
 });
 
-console.log(cartSlice);
+// console.log(cartSlice);
 export const { clearCart, removeItem, increase, decrease, calculateTotals } =
   cartSlice.actions;
 export default cartSlice.reducer;

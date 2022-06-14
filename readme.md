@@ -1,3 +1,7 @@
+# Deployed version
+
+[https://iamshubhamjangle.github.io/cartapp](https://iamshubhamjangle.github.io/Cart-Using-Redux-Toolkit/)
+
 # Redux Toolkit
 
 [Redux Toolkit Docs](https://redux-toolkit.js.org/introduction/getting-started)
