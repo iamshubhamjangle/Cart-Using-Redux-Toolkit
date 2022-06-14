@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { calculateTotals } from "./features/cart/cartSlice";
 
 function App() {
+  // @ts-ignore
   const { cartItems } = useSelector((store) => store.cart);
   const dispatch = useDispatch();
 
