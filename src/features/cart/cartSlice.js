@@ -24,17 +24,23 @@ const cartSlice = createSlice({
       // return initialState;
     },
     removeItem: (state, action) => {
-      //console.log(action);  //payload: "rec1JZlfCIBOPdcT2" type: "cart/removeItem"
+      // action = { payload: "rec1JZlfCIBOPdcT2" type: "cart/removeItem" }
       const itemId = action.payload;
       state.cartItems = state.cartItems.filter((item) => item.id !== itemId);
     },
     increase: (state, { payload }) => {
+      // action = { payload: 'rec1JZlfCIBOPdcT2', type: 'cart/increase' }
       const cartItem = state.cartItems.find((item) => item.id === payload);
       cartItem.amount = cartItem.amount + 1;
+    },
+    decrease: (state, { payload }) => {
+      // action = { payload: {id: 'rec1JZlfCIBOPdcT2'} type: "cart/decrease" }
+      const cartItem = state.cartItems.find((item) => item.id === payload.id);
+      cartItem.amount = cartItem.amount - 1;
     },
   },
 });
 
 console.log(cartSlice);
-export const { clearCart, removeItem, increase } = cartSlice.actions;
+export const { clearCart, removeItem, increase, decrease } = cartSlice.actions;
 export default cartSlice.reducer;
