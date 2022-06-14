@@ -34,6 +34,10 @@ function App() {
       {isOpen && <Modal />}
       <Navbar />
       <CartContainer />
+      <footer className="footer">
+        <p>Made by Shubham Jangle</p>
+        <p>This project was made to test how Redux Toolkit works!</p>
+      </footer>
     </main>
   );
 }
