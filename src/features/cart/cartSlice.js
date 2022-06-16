@@ -27,9 +27,10 @@ export const getCartItems = createAsyncThunk(
       // console.log(thunkAPI.getState());
       // thunkAPI.dispatch(openModal());
       const resp = await axios(url);
-
+      // console.log(resp.data)
       return resp.data;
     } catch (error) {
+      // console.log(e.response);    
       return thunkAPI.rejectWithValue('something went wrong');
     }
   }
@@ -81,18 +82,16 @@ const cartSlice = createSlice({
   },
   // For async functions
   extraReducers: {
-    // @ts-ignore
     [getCartItems.pending]: (state) => {
       state.isLoading = true;
     },
-    // @ts-ignore
     [getCartItems.fulfilled]: (state, action) => {
-      // console.log(action);
+      // console.log(action.payload);
       state.isLoading = false;
       state.cartItems = action.payload;
     },
-    // @ts-ignore
     [getCartItems.pending]: (state) => {
+      // console.log(action.payload);
       state.isLoading = true;
     },
   },
